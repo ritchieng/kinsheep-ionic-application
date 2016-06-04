@@ -1,0 +1,38 @@
+<div class="modal">
+  <ion-header-bar>
+    <h1 class="title">Signup</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeSignup()"><i class="icon ion-close-circled"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doSignup()" class="gem-form">
+      <div class="list">
+       
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" ng-model="signupData.email" placeholder="Email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="signupData.password" placeholder="Password">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Confirm</span>
+          <input type="password" ng-model="signupData.confirmPassword" placeholder="Re-enter Password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-calm" type="submit" style="border-style:none; background-color:#5ABAE9;"><strong>Sign Up</strong></button>
+        </label>
+
+      </div>
+
+      </br>  
+      </br>
+      </br>
+      </br>
+      <div class="text-center h4" style ="color:#F95038">{{error}}</div>
+    </form>
+  </ion-content>
+</div>
+

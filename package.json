@@ -1,0 +1,28 @@
+{
+  "name": "kinsheep",
+  "version": "0.0.1",
+  "description": "Kinsheep: networking made efficient",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-jsbeautifier": "^0.2.10",
+    "grunt-jscs": "^2.6.0"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-whitelist",
+    "cordova-plugin-console",
+    "com.ionic.keyboard",
+    "cordova-plugin-device",
+    "cordova-plugin-splashscreen",
+    "org.apache.cordova.camera",
+    {
+      "locator": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions",
+      "id": "com.telerik.plugins.nativepagetransitions"
+    }
+  ],
+  "cordovaPlatforms": [
+    "android",
+    "ios"
+  ]
+}

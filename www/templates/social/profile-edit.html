@@ -1,0 +1,140 @@
+<!-- Title for header bar (refer to www/index.html) -->
+<ion-view title="Edit Profile" ng-controller="NavCtrl">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios-arrow-back" ng-click="goProfile()"></button>
+  </ion-nav-buttons>
+
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  /END RIGHT SIDE BUTTON
+  ====================== -->
+
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content profile-edit" ng-controller="ProfileCtrl as self" cache-view="false">
+
+
+    <!-- ======================
+    PICTURE SECTION
+    ====================== -->
+    <div class="gem-profile-media2" style="background-color:#fff; color:#414042">
+      <div class="gem-profile-details2">
+        <img ng-src="{{'data:image/jpg;base64,' + user.profileImg}}" alt="" class="gem-circle profile-image2">
+        </br> </br>
+        <div>
+          <button class="button button-small button-dark button-rounded" ng-click="capturePic();" style="border-style:none;">Capture</button>
+          <button class="button button-small button-calm button-rounded" ng-click="choosePic();" style="border-style:none; background-color:#5ABAE9;">Choose</button>
+        </div>
+      </div>
+
+      <!-- background image (post-img.jpg)
+      <img src="img/gemionic/googlebg.png" alt="" class="fluid-image profile-background-image">
+      -->
+    </div>
+    <!-- ======================
+    END CHANGE PICTURE SECTION
+    ====================== -->
+    <!-- Standard Ionic List -->
+    <div class="list">
+      <form ng-submit="update(settings)">
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Designation</span>
+            <input type="text" placeholder="{{user.position}}" maxlength="50" ng-model="settings.position">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Organisation</span>
+            <input type="text" placeholder="{{user.firm}}" maxlength="50" ng-model="settings.firm">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Kinsheep Pitch ({{150-settings.pitch.length}} chars)</span>
+            <textarea placeholder="{{user.pitch}}" class="wrap" maxlength="150" data-ng-minLength="1" ng-trim="false"style="height:100px;" ng-model="settings.pitch"></textarea>
+          </label>
+          <label class="item">
+            <button class="button button-full button-calm" type="submit" style="border-style:none; background-color:#5ABAE9;">Save</button>
+          </label>
+        </div>
+      </div>
+      </form>
+      <!--<label class="item overflow item-stacked-label item-button-right">
+        <span class="input-label">Add Skills</span>
+      <button class="button button-small button-calm" style="border-style:none; background-color:#5ABAE9;" ng-click="openSkills()" ng-disabled="true"><i class="icon ion-plus-round"></i>
+      </button>
+      </label>-->
+      <!-- LOGIC FOR DROPDOWN SELECT MENUS
+      <label class="item item-input item-select">
+        <div class="input-label">
+          City
+        </div>
+        <select>
+          <option>Silicon Valley</option>
+          <option selected>Singapore</option>
+          <option>Israel</option>
+        </select>
+      </label>
+      -->
+      <!-- div class="item item-divider">
+        Hide/Unhide Social Links
+      </div>
+      <div class="item item-icon-left item-toggle">
+        <i class="icon ion-social-github" style="color:#333333;"></i>
+        Github
+         <label class="toggle-balanced toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <div class="item item-icon-left item-toggle">
+        <i class="icon ion-email"></i>
+        Email
+         <label class="toggle-balanced toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <div class="item item-icon-left item-toggle">
+        <i class="icon ion-social-linkedin" style="color:#007bb6;"></i>
+        LinkedIn
+         <label class="toggle-balanced toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <div class="item item-icon-left item-toggle">
+        <i class="icon ion-social-facebook" style="color:#3b5998;"></i>
+        Facebook
+         <label class="toggle-balanced toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <div class="item item-icon-left item-toggle">
+        <i class="icon ion-social-twitter" style="color:#00aced;"></i>
+        Twitter
+         <label class="toggle-balanced toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+    </div>-->
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,131 @@
+<!-- Title for header bar (refer to www/index.html) -->
+<ion-view title="Getting Started" ng-controller="NavCtrl">
+
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content profile-edit" ng-controller="ProfileCtrl as self">
+  <!-- NearbyCtrl to be replaced with ProfileCtrl -->
+
+
+    <!-- ======================
+    PICTURE SECTION
+    ====================== -->
+    <div class="gem-profile-media2" style="background-color:#fff; color:#414042">
+      <div class="gem-profile-details2">
+        <img ng-src="{{'data:image/jpg;base64,' + defProfileImg}}" alt="" class="gem-circle profile-image2">
+        <h5>Change default picture</h5>
+      </div>
+      <!-- background image (post-img.jpg)
+      <img src="img/gemionic/googlebg.png" alt="" class="fluid-image profile-background-image">
+      -->
+    </div>
+    <!-- ======================
+    END CHANGE PICTURE SECTION
+    ====================== -->
+    <!-- Standard Ionic List -->
+    <div class="list">
+      <form ng-submit="create(settings)">
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">First Name</span>
+            <input type="text" placeholder="Dave" ng-model="settings.firstName">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Last Name</span>
+            <input type="text" placeholder="McSpoon" ng-model="settings.lastName">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Designation</span>
+            <input type="text" placeholder="Chief Muffin Specialist" maxlength="50" ng-model="settings.position">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Organisation</span>
+            <input type="text" placeholder="Association for Pastries" maxlength="50" ng-model="settings.firm">
+          </label>
+          <label class="item item-input item-stacked-label">
+            <span class="input-label">Kinsheep Pitch ({{150-settings.pitch.length}} chars)</span>
+            <textarea placeholder="Write a one sentence pitch about yourself (optional)." class="wrap" maxlength="150" data-ng-minLength="1" ng-trim="false" ng-model="settings.pitch" style="height:100px;"></textarea>
+          </label>
+          <!-- <label class="item overflow item-stacked-label item-button-right">
+            <span class="input-label">Add Skills</span>
+            <a href="javascript:void(0)" class="button button-small button-calm" style="border-style:none; background-color:#5ABAE9;"><i class="icon ion-plus-round"></i>
+          </a>
+          </label>  -->
+          <label class="item">
+            <button class="button button-full button-calm" type="submit" style="border-style:none; background-color:#5ABAE9;">Proceed</button>
+          </label>
+        </div>
+        <div class="text-center h4" style ="color:#F95038">{{error}}</div>
+      </div>
+      </form>
+      <!-- LOGIC FOR DROPDOWN SELECT MENUS
+      <label class="item item-input item-select">
+        <div class="input-label">
+          City
+        </div>
+        <select>
+          <option>Silicon Valley</option>
+          <option selected>Singapore</option>
+          <option>Israel</option>
+        </select>
+      </label>
+      -->
+      <!-- div class="item item-divider">
+        Hide/Unhide Social Links
+      </div>
+      <div class="item item-icon-left item-toggle">
+        <i class="icon ion-social-github" style="color:#333333;"></i>
+        Github
+         <label class="toggle-balanced toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <div class="item item-icon-left item-toggle">
+        <i class="icon ion-email"></i>
+        Email
+         <label class="toggle-balanced toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <div class="item item-icon-left item-toggle">
+        <i class="icon ion-social-linkedin" style="color:#007bb6;"></i>
+        LinkedIn
+         <label class="toggle-balanced toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <div class="item item-icon-left item-toggle">
+        <i class="icon ion-social-facebook" style="color:#3b5998;"></i>
+        Facebook
+         <label class="toggle-balanced toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <div class="item item-icon-left item-toggle">
+        <i class="icon ion-social-twitter" style="color:#00aced;"></i>
+        Twitter
+         <label class="toggle-balanced toggle">
+           <input type="checkbox">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+    </div>-->
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,46 @@
+{
+  "name": "Kinsheep",
+  "app_id": "8de6bca7",
+  "proxies": [
+    {
+      "path": "/login",
+      "proxyUrl": "https://kinsheep.com:3030/login"
+    },
+    {
+      "path": "/friends",
+      "proxyUrl": "https://kinsheep.com:3030/friends"
+    },
+    {
+      "path": "/get_profile",
+      "proxyUrl": "https://kinsheep.com:3030/get_profile"
+    },
+    {
+      "path": "/get_chat",
+      "proxyUrl": "https://kinsheep.com:3030/get_chat"
+    },
+    {
+      "path": "/create_message",
+      "proxyUrl": "https://kinsheep.com:3030/create_message"
+    },
+    {
+      "path": "/add_user",
+      "proxyUrl": "https://kinsheep.com:3030/add_user"
+    },
+    {
+      "path": "/accept_request",
+      "proxyUrl": "https://kinsheep.com:3030/accept_request"
+    },
+    {
+      "path": "/send_request",
+      "proxyUrl": "https://kinsheep.com:3030/send_request"
+    },
+    {
+      "path": "/get_interactions",
+      "proxyUrl": "https://kinsheep.com:3030/get_interactions"
+    },
+    {
+      "path": "/edit_user",
+      "proxyUrl": "https://kinsheep.com:3030/edit_user"
+    }
+  ]
+}

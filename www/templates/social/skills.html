@@ -1,0 +1,44 @@
+<div class="modal">
+  <ion-header-bar>
+    <h1 class="title">Skills</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeSkills()"><i class="icon ion-close-circled"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <div class="item item-divider">
+        Your Skills
+      </div>
+      <div class="item wrap" style="max-height:160px;">
+        <ul>
+          <li ng-repeat="skill in nearby.nearbyList[0].skills" style="display:inline;">
+            <button class="button button-small button-skill button-calm" style="border-style:none; background-color:#5ABAE9;">
+              {{skill}}
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="item item-divider">
+        Add/Remove Skills
+      </div>
+      <div class="item item-input">
+        <input type="text" placeholder="Search for skills" ng-model="skillSearch">
+      </div>
+      <div class="list list-inset" ng-controller="SkillsCtrl as skills">
+        <div class="item item-checkbox" ng-repeat="skill in skills.skillsList | filter:skillSearch">
+          <label class="checkbox">
+            <input type="checkbox">
+          </label>
+          {{skill}}
+        </div>
+      </div>
+      
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="calm" style="border-style:none; background-color:#5ABAE9;">
+    <a href="#" class="title" style="text-decoration:none; color:#ffffff" ng-click="confirmSave()">Save</a>
+  </ion-footer-bar>
+
+</div>
+

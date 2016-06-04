@@ -1,0 +1,118 @@
+<!-- Title for the ion view -->
+<ion-view title="Friend List">
+  <!-- ======================
+  LEFT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  END LEFT SIDE BUTTON
+  ====================== -->
+
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-search"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  END RIGHT SIDE BUTTON
+  ====================== -->
+
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content padding">
+
+    <!-- Search Box - standard ionic markup -->
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search">
+      </label>
+    </div>
+    <!-- End Search Box -->
+
+    <!-- standard small title heading -->
+    <div class="uppercase label-title">32 friends</div>
+    <!-- end standard small title heading -->
+
+    <!-- ======================
+    GEMIONIC FRIEND LIST MODULE
+    ====================== -->
+    <div class="gem-friend-grid clearfix">
+      
+      <!-- Friend List Item  -->
+      <div class="friend-item">  
+            <!-- Round Image here. Fluid width and Colored ring stating status -->
+            <img src="img/gemionic/profile-image.jpg" alt="" class="gem-friend-list-profile-pic">
+            <!-- Online Status Icon -->
+            <div class="online-status"><i class="icon ion-record gem-color-default"></i> Offline</div>
+            <!-- Friend name -->
+            <p class="friend-name">Alison</p>
+      </div>
+      <!-- End Friend List Item  -->
+
+      <!-- Friend List Item  -->
+      <div class="friend-item">  
+            <!-- Round Image here. Fluid width and Colored ring stating status -->
+            <img src="img/gemionic/profile-image-2.jpg" alt="" class="gem-friend-list-profile-pic">
+            <!-- Online Status Icon -->
+            <div class="online-status"><i class="icon ion-record gem-color-success"></i> Online</div>
+            <!-- Friend name -->
+            <p class="friend-name">Carl</p>
+      </div>
+      <!-- End Friend List Item  -->
+
+      <!-- Friend List Item  -->
+      <div class="friend-item">  
+            <!-- Round Image here. Fluid width and Colored ring stating status -->
+            <img src="img/gemionic/profile-image-3.jpg" alt="" class="gem-friend-list-profile-pic">
+            <!-- Online Status Icon -->
+            <div class="online-status"><i class="icon ion-record gem-color-danger"></i> Busy</div>
+            <!-- Friend name -->
+            <p class="friend-name">Trish</p>
+      </div>
+      <!-- End Friend List Item  -->
+
+      <!-- Friend List Item  -->
+      <div class="friend-item">  
+            <!-- Round Image here. Fluid width and Colored ring stating status -->
+            <img src="img/gemionic/profile-image-4.jpg" alt="" class="gem-friend-list-profile-pic">
+            <!-- Online Status Icon -->
+            <div class="online-status"><i class="icon ion-record gem-color-warning"></i> Idle</div>
+            <!-- Friend name -->
+            <p class="friend-name">Max</p>
+      </div>
+      <!-- End Friend List Item  -->
+
+      <!-- Friend List Item  -->
+      <div class="friend-item">  
+            <!-- Round Image here. Fluid width and Colored ring stating status -->
+            <img src="img/gemionic/profile-image-5.jpg" alt="" class="gem-friend-list-profile-pic">
+            <!-- Online Status Icon -->
+            <div class="online-status"><i class="icon ion-record gem-color-success"></i> Online</div>
+            <!-- Friend name -->
+            <p class="friend-name">Alison Marylin</p>
+      </div>
+      <!-- End Friend List Item  -->
+
+      <!-- Friend List Item  -->
+      <div class="friend-item">  
+            <!-- Round Image here. Fluid width and Colored ring stating status -->
+            <img src="img/gemionic/profile-image-6.jpg" alt="" class="gem-friend-list-profile-pic">
+            <!-- Online Status Icon -->
+            <div class="online-status"><i class="icon ion-record gem-color-success"></i> Online</div>
+            <!-- Friend name -->
+            <p class="friend-name">Alison Marylin</p>
+      </div>
+    <!-- End Friend List Item  -->
+
+    </div>
+
+  </ion-content>
+  <!-- ======================
+  END MAIN CONTENT SECTION
+  ====================== -->
+</ion-view>

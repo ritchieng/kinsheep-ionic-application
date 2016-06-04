@@ -1,0 +1,90 @@
+<!-- Title for header bar (refer to www/index.html) -->
+<ion-view title="Profile 2">
+  <!-- ======================
+  LEFT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-edit"></button>
+  </ion-nav-buttons>
+  
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content">
+    <!-- ======================
+    GEMIONIC PROFILE SECTION
+    ====================== -->
+    <div class="gem-profile-media">
+      <div class="gem-profile-details profile2">
+        <!-- Profile Name -->
+        <h3 class="gem-white">Samantha Aryon</h3>
+        <!-- Profile Description text -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias eius laborum hic similique beatae officiis.</p>
+        <!-- text stats -->
+        <div class="gem-center">
+          <i class="icon ion-chatbubble"></i> 2003 | <i class="icon ion-heart"></i> 2044
+        </div>
+      </div>
+      <!-- Background Image -->
+      <img src="img/gemionic/post-img.jpg" alt="" class="fluid-image profile-background-image" style="vertical-align:middle;">
+    </div>
+    <!-- ======================
+    END GEMIONIC PROFILE SECTION
+    ====================== -->
+
+    <!-- Basic Tabs - not hooked qith angular -->
+    <div class="tabs gem-position-static profile-tabs">
+      <a class="tab-item active">
+        <i class="ion-ios7-paper"></i> Posts
+      </a>
+      <a class="tab-item">
+        <i class="ion-images"></i> Photos
+      </a>
+      <a class="tab-item">
+        <i class="ion-social-youtube"></i> Videos
+      </a>
+    </div>
+
+    <div class="profile-feed">
+      <div class="row">
+        <div class="col">
+            <div class="profile-post">
+              <img src="img/gemionic/yellow-rect.jpg" alt="">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quam.</p>
+              <span class="profile-post-stat"><i class="icon ion-heart"></i> 23 | <i class="icon ion-chatbubble"></i> 23</span>
+              <span class="profile-post-stat"><i class="icon ion-ios7-clock"></i> 23 days ago</span>
+            </div>
+            <div class="profile-post">
+              <img src="img/gemionic/orange.jpg" alt="">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quam.</p>
+              <span class="profile-post-stat"><i class="icon ion-heart"></i> 23 | <i class="icon ion-chatbubble"></i> 23</span>
+              <span class="profile-post-stat"><i class="icon ion-ios7-clock"></i> 23 days ago</span>
+            </div>
+          </div>
+        <div class="col">
+          <div class="profile-post">
+              <img src="img/gemionic/tall-blue.jpg" alt="">
+              <h4 class="bold">Blue</h4>
+              <span class="profile-post-stat"><i class="icon ion-heart"></i> 23 | <i class="icon ion-chatbubble"></i> 23</span>
+              <span class="profile-post-stat"><i class="icon ion-ios7-clock"></i> 23 days ago</span>
+            </div>
+            <div class="profile-post">
+              <img src="img/gemionic/post-img-rect.jpg" alt="">
+              <h4 class="bold">Blue</h4>
+              <span class="profile-post-stat"><i class="icon ion-heart"></i> 23 | <i class="icon ion-chatbubble"></i> 23</span>
+              <span class="profile-post-stat"><i class="icon ion-ios7-clock"></i> 23 days ago</span>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+  </ion-content>
+</ion-view>

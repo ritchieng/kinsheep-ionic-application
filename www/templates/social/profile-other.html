@@ -1,0 +1,73 @@
+<!-- Title for header bar (refer to www/index.html) -->
+<ion-view title="Profile" ng-controller="NavCtrl">
+  
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios-arrow-back" ng-click="goHome()"></button>
+  </ion-nav-buttons>
+  
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  /END RIGHT SIDE BUTTON
+  ====================== -->
+  
+
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content" ng-controller="ProfileOtherCtrl as other" cache-view="false">
+  <!-- NearbyCtrl to be replaced with ProfileCtrl -->
+
+    <!-- ======================
+    GEMIONIC PROFILE SECTION
+    ====================== -->
+    <div class="gem-profile-media" style="background-color:#fff; color:#414042">
+      <div class="gem-profile-details">
+        <img ng-src="{{'data:image/jpg;base64,' + other.profile.profileImg}}" alt="" class="gem-circle profile-image">
+        <h3>{{other.profile.firstName + " " + other.profile.lastName}}</h3>
+        <h5>{{other.profile.position}}</h5>
+        <h5>{{other.profile.firm}}</h5>
+
+        <h5 class="wrap"><br/>{{other.profile.pitch}}</h5>
+      </div>
+
+      <!-- background image (post-img.jpg) 
+      <img src="img/gemionic/googlebg.png" alt="" class="fluid-image profile-background-image">
+      -->
+    </div>
+    <!-- ======================
+    END GEMIONIC PROFILE SECTION
+    ====================== -->
+    <div class="text-center padding">
+      <div ng-show="getStatus() === 'connected'" class="button button-rounded button-small button-outline button-calm" ng-click="removeFriend()">Remove Friend</div>
+      <div ng-show="getStatus() === 'req_received'" class="button button-rounded button-small button-outline button-calm" ng-click="acceptRequest()">Accept Request</div>
+      <div ng-show="getStatus() === 'req_received'" class="button button-rounded button-small button-outline button-calm" ng-click="declineRequest()">Decline Request</div>
+      <div ng-show="getStatus() === 'req_sent'" class="button button-small button-rounded button-outline button-light" ng-click="cancelRequest()">Cancel Request</div>
+      <div ng-show="getStatus() === 'not_connected'" class="button button-rounded button-small button-outline button-calm" ng-click="sendRequest()">Add Friend</div>
+      <a href="#/app/conversation?id={{other.profile._id}}&name={{other.profile.firstName}}" ng-show="getStatus() === 'connected'" class="button button-rounded button-small button-balanced" style="border-style:none;">Send a Message</a>
+    </div>
+
+    <!-- Standard Ionic List Markup -->
+    <div class="list">
+      <div class="item item-divider">
+        Skills
+      </div>
+      <div class="item wrap">
+        <ul>
+          <li ng-repeat="skill in other.profile.skills" style="display:inline;">
+            <button class="button button-small button-skill button-calm" style="border-style:none; background-color:#5ABAE9;">
+              {{skill}}
+            </button>
+          </li>
+        </ul>
+        
+      </div>
+    <!-- End Standard Ionic List Markup -->
+
+
+  </ion-content>
+</ion-view>

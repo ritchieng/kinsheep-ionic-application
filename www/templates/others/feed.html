@@ -1,0 +1,129 @@
+<!-- Title for the ion view -->
+<ion-view title="Feeds">
+  <!-- ======================
+  LEFT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  /END LEFT SIDE BUTTON
+  ====================== -->
+
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-search"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  /END RIGHT SIDE BUTTON
+  ====================== -->
+  
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content feed">
+
+    <!-- ======================
+    SEARCH FORM - STANDARD IONIC MARKUP
+    ====================== -->  
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Email">
+      </label>
+    </div>
+    <!-- ======================
+    /END SEARCH FORM
+    ====================== --> 
+
+    <!-- ======================
+    POST - image only
+    ====================== --> 
+    <div class="news-media">
+      <img src="img/gemionic/news-image.jpg" alt="" class="fluid-image">
+      <div class="media-social-stats">
+        <button class="button button-small button-borderless button-positive"><i class="icon ion-heart"></i></button>
+      </div>
+    </div>
+    
+    <!-- ======================
+    POSTER - profile thumb, name and post stats
+    ====================== --> 
+    <div class="news-item">
+      <div class="news-thumb">
+        <img src="img/gemionic/profile-image.jpg" alt="" class="img">
+      </div>
+      <div class="news-content">
+        <h4>Roberta Simmons</h4>
+        <div class="gem-tiny-text news-item-stats">
+          <i class="icon ion-clock"></i> 2 days ago
+          <span class="news-comment-summary">
+            <i class="icon ion-heart"></i> 2 
+            <i class="icon ion-chatbubble"></i> 3
+          </span>
+        </div>
+      </div>
+      <div class="news-more-action">
+        <i class="icon ion-more"></i>
+      </div>
+    </div>
+    <!-- ======================
+    /END POSTER
+    ====================== --> 
+
+    <!-- ======================
+    POST - image only
+    ====================== --> 
+    <div class="news-media">
+      <img src="img/gemionic/news-image-2.jpg" alt="" class="fluid-image">
+      <div class="media-social-stats stat-label"> <!-- Absolutely positioned right. '.news-media' is relative -->
+          <span class="news-comment-summary">
+            <i class="icon ion-heart"></i> 2 
+            <i class="icon ion-chatbubble"></i> 3
+          </span>
+        </div>
+    </div>
+    <!-- ======================
+    /END POST
+    ====================== --> 
+
+    <!-- ======================
+    POSTER - profile thumb, name and post stats
+    ====================== --> 
+    <div class="news-item">
+
+      <!-- Poster Thumb -->
+      <div class="news-thumb">
+        <img src="img/gemionic/profile-image-2.jpg" alt="" class="img">
+      </div>
+      <!-- /End Poster Thumb -->
+
+      <!-- Poster Name and Post stats -->
+      <div class="news-content">
+        <h4>Carl Max</h4>
+        <div class="gem-tiny-text news-item-stats">
+          <i class="icon ion-clock"></i> 2 days ago 
+          <span class="news-comment-summary">
+            <i class="icon ion-heart"></i> 2 
+            <i class="icon ion-chatbubble"></i> 3
+          </span>
+        </div>
+      </div>
+      <!-- /End -->
+
+      <!-- More actions - absolutely positioned right-->
+      <div class="news-more-action">
+        <i class="icon ion-more"></i>
+      </div>
+      <!-- End More actions -->
+    </div>
+    <!-- ======================
+    /END POSTER
+    ====================== --> 
+  </ion-content>
+  <!-- ======================
+  END MAIN CONTENT SECTION
+  ====================== -->
+</ion-view>

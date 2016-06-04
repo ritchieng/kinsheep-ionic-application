@@ -1,0 +1,51 @@
+<!-- Title for header bar (refer to www/index.html) -->
+<ion-view title="Feedback" ng-controller="NavCtrl">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios-arrow-back" ng-click="goHome()"></button>
+  </ion-nav-buttons>
+  
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  /END RIGHT SIDE BUTTON
+  ====================== -->
+  
+  <!-- ======================
+  MAIN SECTION CONTENT
+  ====================== -->
+  <ion-content class="has-header gem-ion-content send-email">
+    <!-- Standard Ionic Field Markup (Subject) -->
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Subject</span>
+        <input type="text" placeholder="Title" maxlength="150">
+      </label>
+    </div>
+    <!-- Standard Ionic Field Markup -->
+    <div class="gem-edit-section">
+      <div class="gem-poster">
+
+        <!-- Email body -->
+        <div>
+          <textarea placeholder="Write us, we'd love to hear from you!" style="height:350px;" class="wrap"></textarea>
+        </div>
+        <!-- Email body -->
+
+      </div>
+
+      <!-- Bottom Controls -->
+      <div class="row gem-poster-controls padding">
+        <a href="#" class="col control"><i class="icon ion-android-send action"></i></a>
+      </div>
+      <!-- End Bottom Controls -->
+    </div>
+    <!-- ======================
+    END MAIN SECTION CONTENT
+    ====================== -->
+  </ion-content>
+</ion-view>

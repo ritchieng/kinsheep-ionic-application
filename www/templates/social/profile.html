@@ -1,0 +1,96 @@
+<!-- Title for header bar (refer to www/index.html) -->
+<ion-view title="Profile" ng-controller="NavCtrl">
+  
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios-arrow-back" ng-click="goHome()"></button>
+  </ion-nav-buttons>
+  
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  /END RIGHT SIDE BUTTON
+  ====================== -->
+  
+
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content" ng-controller="ProfileCtrl as self" cache-view="false">
+  <!-- NearbyCtrl to be replaced with ProfileCtrl -->
+
+    <!-- ======================
+    GEMIONIC PROFILE SECTION
+    ====================== -->
+    <div class="gem-profile-media" style="background-color:#fff; color:#414042">
+      <div class="gem-profile-details">
+        <img ng-src="{{'data:image/jpg;base64,' + user.profileImg}}" alt="" class="gem-circle profile-image">
+        <h3>{{user.firstName + " " + user.lastName}}</h3>
+        <h5>{{user.position}}</h5>
+        <h5>{{user.firm}}</h5>
+
+        <h5 class="wrap"><br/>{{user.pitch}}</h5>
+      </div>
+
+      <!-- background image (post-img.jpg) 
+      <img src="img/gemionic/googlebg.png" alt="" class="fluid-image profile-background-image">
+      -->
+    </div>
+    <!-- ======================
+    END GEMIONIC PROFILE SECTION
+    ====================== -->
+
+    <!-- Standard Ionic List Markup -->
+    <div class="list">
+      <div class="item item-divider">
+        Skills
+      </div>
+      <div class="item wrap">
+        <ul>
+          <li ng-repeat="skill in user.skills" style="display:inline;">
+            <button class="button button-small button-skill button-calm" style="border-style:none; background-color:#5ABAE9;">
+              {{skill}}
+            </button>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+      <!--div class="item item-divider">
+        Social
+      </div>
+
+       <a class="item item-icon-left" href="#">
+         <i class="icon ion-social-github" style="color:#333333;"></i>
+         {{self.profile.publicLinks.github}}
+       </a>
+       <a class="item item-icon-left item-button-right" href="#">
+         <i class="icon ion-email"></i>
+         {{self.profile.email}}
+       </a>
+
+       <a class="item item-icon-left" href="#">
+         <i class="icon ion-social-linkedin" style="color:#007bb6;"></i>
+         {{self.profile.publicLinks.linkedIN}}
+       </a>
+       
+       <a class="item item-icon-left" href="#">
+         <i class="icon ion-social-facebook" style="color:#3b5998;"></i>
+         {{self.profile.publicLinks.facebook}}
+       </a>
+
+       <a class="item item-icon-left" href="#">
+         <i class="icon ion-social-twitter" style="color:#00aced;"></i>
+         {{self.profile.publicLinks.twitter}}
+        </a>
+      </div>--> 
+
+  </ion-content>
+
+  <ion-footer-bar align-title="left" class="calm" style="border-style:none; background-color:#5ABAE9;">
+    <a href="#/app/editprofile" class="title" style="text-decoration:none; color:#ffffff">Edit Profile</a>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,81 @@
+<!-- Title for header bar (refer to www/index.html) -->
+<ion-view title="Settings" ng-controller="NavCtrl">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios-arrow-back" ng-click="goHome()"></button>
+  </ion-nav-buttons>
+  
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  /END RIGHT SIDE BUTTON
+  ====================== -->
+  
+
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content" ng-controller="SettingsCtrl as s">
+    <form ng-submit="update(settings)">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">First Name</span>
+          <input type="text" placeholder="{{s.self.firstName}}" ng-model="settings.firstName" maxlength="30">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Last Name</span>
+          <input type="text" placeholder="{{s.self.lastName}}" ng-model="settings.lastName" maxlength="30">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" placeholder="{{s.self.email}}" ng-model="settings.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Old Password</span>
+          <input type="password" placeholder="********" ng-model="settings.oldPass">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">New Password</span>
+          <input type="password" placeholder="********" ng-model="settings.newPass">
+        </label>
+        <label class="item">
+          <button class="button button-block button-calm" type="submit" style="border-style:none; background-color:#5ABAE9;"><strong>Save</strong></button>
+          <div class="text-center h5" style ="color:#F95038">{{error}}</div>
+          <div class="text-center h5" style ="color:#27AE60">{{success}}</div>
+        </label>
+      </div>
+
+    </form>
+    <!-- Standard Ionic List Markup -->
+    <div class="list">
+      <div class="item item-divider">
+        Notifications
+      </div>
+      <div class="item item-toggle">
+        Push Notifications
+       <label class="toggle-balanced toggle">
+         <input type="checkbox disabled">
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+       </label>
+      </div>
+      <div class="item item-toggle">
+        Email Notifications
+       <label class="toggle-balanced toggle">
+         <input type="checkbox disabled">
+         <div class="track">
+           <div class="handle"></div>
+         </div>
+       </label>
+      </div>
+    </div>
+    <!-- End Standard Ionic List Markup -->
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-view title="Messages" class="messaging-view" ng-controller="NavCtrl">
+
+<ion-nav-buttons side="left">
+<button class="button button-icon icon ion-ios-arrow-back" ng-click="goHome()"></button>
+</ion-nav-buttons>
+
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+  <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons>
+  <!-- ======================
+  /END RIGHT SIDE BUTTON
+  ====================== -->
+  <!-- ======================
+  /CHAT
+  ====================== -->
+  <ion-pane class="messaging-view" ng-controller="ChatCtrl">
+  <div>
+    <ion-content class="content-stable" on-tap="showTime = !showTime">
+
+    <div ng-repeat="message in messages" ng-class="{other: message.userId != myId}" class="message">
+
+      <div ng-class="{'slide-right': showTime, '': !showTime, 'message': message.from === myId, 'message2': message.from != myId}">
+        <span>{{ message.body }}</span>
+      </div>
+
+      <div ng-class="{'slide-right': showTime, '': !showTime, 'time': message.from === myId, 'time2': message.from != myId}">
+        {{message.time | date: "MMM d h:mm a"}}
+      </div>
+
+    </div>
+  </ion-content>
+</div>
+
+<ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+<label class="item-input-wrapper">
+  <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+</label>
+<button class="button button-clear" ng-click="sendMessage(); closeKeyboard()">
+  Send
+</button>
+</ion-footer-bar>
+
+</ion-pane>
+    <!-- ======================
+    /CHAT END
+    ====================== -->
+
+  </ion-view>

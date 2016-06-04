@@ -1,0 +1,41 @@
+<ion-side-menus>
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-light">
+      
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="right" ng-controller="ProfileCtrl as self" cache-view="false">
+    
+    <!-- Sidebar Content -->
+    <ion-content class="gem-sidebar dark">
+      <!-- Profile Box - Extends ionic's .row -->
+      <div class="row gem-sidebar-profile-box">
+        <!-- Profile Thumb -->
+        <div class="col col-25">
+          <img ng-src="{{'data:image/jpg;base64,'+ getUser().profileImg}}" class="gem-profile-image" alt="">
+        </div>
+        <!-- End Profile Thumb -->
+
+        <!-- Profile Name -->
+        <div class="col col-50">
+          <h4 class="title">{{getUser().firstName + " " + getUser().lastName}}</h4>
+          <h6>{{getUser().position}}</h6>
+        </div>
+        <!-- End Profile Name -->
+        
+      </div>
+      <!-- End Profile Box -->
+      <ion-list ng-controller="NavCtrl">
+        <ion-item nav-clear menu-close href="#/app/main"><i class="ion-ios-home">&nbsp; Home</i></ion-item>
+        <ion-item nav-clear menu-close href="#/app/profile"><i class="ion-person">&nbsp; View Profile</i></ion-item>
+        <!-- <ion-item nav-clear menu-close href="#/app/editprofile"><i class="ion-edit">&nbsp; Edit Profile</i></ion-item> -->
+        <ion-item nav-clear menu-close href="#/app/settings"><i class="ion-gear-a"></i>&nbsp; Settings</ion-item>
+        <ion-item nav-clear menu-close href="#/app/email"><i class="ion-chatbubble-working">&nbsp; Give us Feedback</i></ion-item>
+        <ion-item nav-clear menu-close ng-click="doLogout()"><i class="ion-log-out">&nbsp; Logout</i></ion-item>
+      </ion-list>
+    </ion-content>
+    <!-- End sidemenu content -->
+  </ion-side-menu>
+</ion-side-menus>

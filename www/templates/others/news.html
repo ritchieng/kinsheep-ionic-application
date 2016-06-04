@@ -1,0 +1,115 @@
+<!-- Title for header bar (refer to www/index.html) -->
+<ion-view title="Social News">
+  <!-- ======================
+  LEFT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-search"></button>
+  </ion-nav-buttons>
+  
+  <!-- ======================
+  MAIN CONTENT SECTION
+  ====================== -->
+  <ion-content class="has-header gem-ion-content">
+    <!-- Media section (Picture, Video, Map, etc) -->
+    <div class="news-media">
+      <!-- Image 100% width -->
+      <img src="img/gemionic/news-image.jpg" alt="" class="fluid-image"> 
+
+      <!-- Stats (Absolutely positioned right) -->
+      <div class="media-social-stats stat-label"> 
+        <span class="news-comment-summary">
+          <i class="icon ion-heart"></i> 2 
+          <i class="icon ion-chatbubble"></i> 3
+        </span>
+      </div>
+
+    </div><!-- End Media section --> 
+
+    <!-- News Item (With Poster and content text summary) -->
+    <div class="news-item">
+      <!-- Poster Thumb -->
+      <div class="news-thumb">
+        <img src="img/gemionic/profile-image.jpg" alt="" class="img">
+      </div>
+      <!-- End Poster -->
+
+      <!-- Content -->
+      <div class="news-content">
+        <h4>Roberta Simmons</h4>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus quo illum, soluta aut illo magni consequuntur iste rerum culpa voluptatum autem, officiis deserunt aliquid dolorum voluptatibus necessitatibus animi provident corporis rem. Rerum mollitia quibusdam doloremque ab quidem molestias nemo voluptate cumque odio atque, esse vel hic, repellendus maiores blanditiis debitis minus incidunt laudantium. Enim dolor incidunt hic dolore asperiores eligendi magni unde excepturi eos sunt in aliquam officiis, quam fugiat aspernatur. Repudiandae minima doloribus, nobis blanditiis modi soluta tenetur non, nostrum, iste saepe alias perspiciatis. Molestiae temporibus numquam ab, soluta similique, dicta a inventore, blanditiis, sapiente praesentium pariatur alias vitae?
+
+        <!-- Stat Section (Absolutely Positioned Right) Version 1-->
+        <div class="other-stats">
+          <button class="button button-balanced button-borderless button-small"><i class="ion-heart"></i> 82</button>
+          <button class="button button-stable button-outline button-small"><i class="ion-heart"></i> 82</button>
+        </div>
+        <!-- End Stat Section -->
+
+        <!-- Stat Section (With Date) -->
+        <div class="gem-tiny-text news-item-stats">
+          <i class="icon ion-clock"></i> 2 days ago
+          <span class="news-comment-summary">
+            <i class="icon ion-heart"></i> 2 
+            <i class="icon ion-chatbubble"></i> 3
+          </span>
+        </div>
+        <!-- Stat Section -->
+
+      </div>
+      <!-- End Content -->
+
+      <!-- Mock trigger button for action sheet for this post -->
+      <div class="news-more-action">
+        <i class="icon ion-more"></i>
+      </div>
+      <!-- End Button -->
+
+    </div>
+    <!-- End News Item -->
+
+    <!-- News Item (For Album Art, Artist Name and Player) -->
+    <div class="news-media">
+
+      <!-- Album Art -->
+      <div class="image">
+        <!-- Fluid image -->
+        <img src="img/gemionic/news-image.jpg" alt="" class="fluid-image">
+        <!-- Social Stats (Absolutely Positioned Right) -->
+        <div class="media-social-stats">
+          <button class="button button-borderless button-small button-assertive">
+            <i class="ion-heart"></i> 3440
+          </button>
+        </div>
+      </div>
+      <!-- End Album Art -->
+
+      <!-- Media description (can be used for album artist name and action) -->
+      <div class="news-media-info">
+        <!-- Thumb (Absolute Positioning, fixed width) -->
+        <div class="thumb">
+          <img src="img/gemionic/sqr-box.jpg" alt="" class="img">
+        </div>
+
+        <!-- Text (static, margin-left shifts out of thumb's way ) -->
+        <div class="text">
+          <h3 class="title">Daft Punk</h3>
+          <h5 class="subtitle">Discovery</h5>
+        </div>
+
+        <!-- further action (absolute position right for further action trigger) -->
+        <div class="media-action">
+          <i class="icon ion-play"></i>
+        </div>
+      </div>
+      <!-- End Media Description -->
+    </div>
+  </ion-content>
+</ion-view>

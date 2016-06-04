@@ -1,0 +1,179 @@
+<!-- Title for the ion view -->
+<ion-view title="Kinsheep">
+
+  <!-- ======================
+  RIGHT SIDE BUTTON
+  ====================== -->
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- ======================
+  /END RIGHT SIDE BUTTON
+  ====================== -->
+
+  <ion-tabs class="tabs-dark tabs-icon-only" ng-controller="MainCtrl">
+
+    <ion-tab title="Nearby" icon-on="ion-ios-location" icon-off="ion-ios-location-outline">
+      <ion-view cache-view="false">
+        <ion-content>
+          <ion-refresher pulling-text="Pull to refresh..." on-refresh="reloadRequestList()"></ion-refresher>
+          <!-- Standard Ionic Markup for search -->
+          <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" placeholder="Search" ng-model="nearbySearch">
+            </label>
+          </div>
+          <!-- End Search box-->
+
+          <!-- ======================
+          NEARBY
+          ====================== -->
+          <!-- standard small heading title -->
+          <div class="label-title">{{ nearbyList.length || 0 }} Nearby</div>
+          <!-- end title -->
+
+          <ul class="list kinsheep-nearby">
+            <!-- Single Friend Item -->
+            <li class="item" ng-repeat="friend in nearbyList | filter:nearbySearch">
+              <!-- thumb image (round) -->
+              <a href="#/app/profile-other?id={{friend._id}}"><img ng-src="{{'data:image/jpg;base64,'+friend.profileImg}}" alt="" class="kinsheep-nearby-profile-pic"></a> <!-- End Image - absolute left/top -->
+
+              <!-- Friend Name, Status Icon and Status Update -->
+              <div class="kinsheep-nearby-text">
+                <div class="row">
+                  <div class="col col-75 col-top">
+                    <b>{{friend.firstName + " " + friend.lastName}}</b>
+                    <span class="signature">{{friend.position}}</span>
+                    <span class="signature">{{friend.firm}}</span>
+                  </div>
+                  <div class="row">
+                  <div class="col col-75">
+                    <!-- NOT CONNECTED -->
+                    <div ng-show="getStatus(friend._id) === 'not_connected'" class="add">
+                      <a href="#" class="button button-small button-rounded button-outline button-light add icon ion-plus button-calm"ng-click="sendRequest(friend._id)"></a>
+                    </div>
+
+                    <!-- RECEIVED -->
+                    <div ng-show="getStatus(friend._id) === 'req_received'" class="add">
+                      <a href="#" class="button button-small button-rounded button-outline button-light add2 icon ion-checkmark button-calm" ng-click="acceptRequest(friend._id)"></a>
+                      <a href="#" class="button button-small button-rounded button-outline button-light add2 icon ion-close button-dark" ng-click="declineRequest(friend._id)"></a>
+                    </div>
+
+                    <!-- PENDING -->
+                    <div ng-show="getStatus(friend._id) === 'req_sent'" class="add">
+                      <a href="#" class="button button-small button-rounded button-outline button-light add icon ion-android-time button-dark" ng-click="cancelRequest(friend._id)"></a>
+                    </div>
+
+                    <!-- SEND MESSAGE (accepted) -->
+                    <div ng-show="getStatus(friend._id) === 'connected'" class="add">
+                      <a href="#/app/conversation?id={{friend._id}}&name={{friend.firstName}}" class="button button-small button-rounded button-outline button-light add icon ion-ios-email-outline button-balanced"></a>
+                    </div>
+                  </div>
+              </div>
+              <!-- end -->
+            </li>
+          </ul>
+        </ion-content>
+      </ion-view>
+    </ion-tab>
+
+
+    <!-- ======================
+    MESSAGES
+    ====================== -->
+    <ion-tab title="Messages" icon-on="ion-ios-email" icon-off="ion-ios-email-outline">
+      <!-- Tab 3 content -->
+      <ion-view cache-view="false">
+        <ion-content>
+          <!-- Standard Ionic Markup for search -->
+          <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" placeholder="Search" ng-model="messageSearch">
+            </label>
+          </div>
+          <!-- End Search box-->
+
+          <!-- standard small heading title -->
+          <div class="label-title">{{ messageList.length || 0 }} Messages</div>
+          <!-- end title -->
+
+          <ul class="list kinsheep-messages">
+              <!-- Single Friend Item -->
+            <li class="item" ng-repeat="chat in messageList | filter: messageSearch | orderBy:'timestamp':true">
+              <!-- thumb image (round) -->
+              <a href="#/app/profile-other?id={{chat._id}}"><img ng-src="{{'data:image/jpg;base64,'+ chat.profileImg}}" alt="" class="kinsheep-messages-profile-pic"></a> <!-- End Image - absolute left/top -->
+
+              <!-- Friend Name, Status Icon and Status Update -->
+              <a href="#/app/conversation?id={{chat._id}}&name={{chat.firstName}}" style="text-decoration:none;">
+                <div class="kinsheep-messages-text">
+                  <b>{{chat.firstName + " " + chat.lastName}}</b>
+                  <p>{{chat.lastMessage}}</p>
+                </div>
+              </a>
+              <!-- end -->
+            </li>
+          </ul>
+        </ion-content>
+      </ion-view>
+    </ion-tab>
+
+
+    <!-- ======================
+    NOTIFICATION
+    ====================== -->
+    <ion-tab title="Request" icon-on="ion-ios-bell" icon-off="ion-ios-bell-outline">
+      <!-- Tab 2 content -->
+      <ion-view cache-view="false">
+        <ion-content>
+          <ion-refresher pulling-text="Pull to refresh..." on-refresh="reloadRequestList()"></ion-refresher>
+          <!-- Standard Ionic Markup for search -->
+          <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" placeholder="Search" ng-model="requestSearch">
+            </label>
+          </div>
+          <!-- End Search box-->
+
+          <!-- standard small heading title -->
+          <div class="row">
+            <!--<div class="col text-center"><div class="gem-profile-details2">{{"Last Updated: " + lastUpdated}}</div>
+            <div class="col text-center"><div class="gem-profile-details2">{{ requestList.length || 0 }} Requests</div>-->
+            <div class="col text-center"><button class="button button-small button-dark button-rounded" ng-click="reloadRequestList()">Refresh</button></div>
+          </div>
+          <!-- end title -->
+
+          <ul class="list kinsheep-notifications">
+              <!-- Single Friend Item -->
+            <li class="item" ng-repeat="person in requestList | filter:requestSearch">
+              <!-- thumb image (round) -->
+              <a href="#/app/profile-other?id={{person._id}}"><img ng-src="{{'data:image/jpg;base64,'+ person.profileImg}}" alt="" class="kinsheep-notifications-profile-pic"></a> <!-- End Image - absolute left/top -->
+
+              <!-- Friend Name, Status Icon and Status Update -->
+              <div class="kinsheep-notifications-text">
+                <div class="row">
+                  <div class="col">
+                    <b>{{person.firstName + " " + person.lastName}}</b>
+                  </div>
+                  <div class="col">
+                    <p>&nbsp;</p>
+                  </div>
+                  <div class="col add">
+                      <a href="#" class="button button-small button-rounded button-outline button-light add2 icon ion-checkmark button-calm" ng-click="acceptRequest(person._id)"></a>
+                      <a href="#" class="button button-small button-rounded button-outline button-light add2 icon ion-close button-dark" ng-click="declineRequest(person._id)"></a>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <!-- end -->
+            </li>
+          </ul>
+        </ion-content>
+      </ion-view>
+    </ion-tab>
+  </ion-tabs>
+
+</ion-view>
+
